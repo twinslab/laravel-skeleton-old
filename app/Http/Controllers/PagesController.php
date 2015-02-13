@@ -14,7 +14,12 @@ class PagesController extends Controller {
      */
     public function home()
     {
-        return view('pages.home');
+        $data = [
+            'pageTitle' => Lang::get('pages/home.page_title'),
+            'pageDesc' => Lang::get('pages/home.page_desc'),
+        ];
+
+        return view('pages.home', $data);
     }
 
     /**
@@ -24,7 +29,12 @@ class PagesController extends Controller {
      */
     public function about()
     {
-        return view('pages.about');
+        $data = [
+            'pageTitle' => Lang::get('pages/about.page_title'),
+            'pageDesc' => Lang::get('pages/about.page_desc'),
+        ];
+
+        return view('pages.about', $data);
     }
 
     /**
@@ -34,7 +44,12 @@ class PagesController extends Controller {
      */
     public function getContact()
     {
-        return view('pages.contact');
+        $data = [
+            'pageTitle' => Lang::get('pages/contact.page_title'),
+            'pageDesc' => Lang::get('pages/contact.page_desc'),
+        ];
+
+        return view('pages.contact', $data);
     }
 
     /**
