@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => 'smtp.mandrillapp.org',
+	'host' => 'smtp.mandrillapp.com',
 
 	/*
 	|--------------------------------------------------------------------------

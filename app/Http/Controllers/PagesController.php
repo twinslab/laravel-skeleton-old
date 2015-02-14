@@ -1,9 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Lang, Mail, Session;
 use App\Http\Requests\SubmitContactFormRequest;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller {
 
@@ -66,7 +64,7 @@ class PagesController extends Controller {
         {
             $message->subject('Contact Form Message')
                 ->from($input['email'], $input['name'])
-                ->to('sample@example.com');
+                ->to(env('EMAIL_ADDRESS_TO'));
 
             // Mandrill-related headers
             $message->getHeaders()->addTextHeader('X-MC-Subaccount', '');

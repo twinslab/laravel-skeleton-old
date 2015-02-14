@@ -1,9 +1,11 @@
-<?php $message_types = ['danger', 'success', 'info', 'warning'] ?>
+<?php $messageTypes = ['danger', 'success', 'info', 'warning'] ?>
 
-@foreach($message_types as $type)
+@foreach($messageTypes as $type)
     @if($message = Session::get('alert-'.$type))
-        <div class="alert alert-{{ $type }} alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"></button>
+        <div class="alert alert-{!! $type !!} fade in alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
             {!! $message !!}
         </div>
     @endif
