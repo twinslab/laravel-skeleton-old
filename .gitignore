@@ -1,6 +1,6 @@
 /vendor
 /node_modules
 .env
-.composer.lock
+composer.lock
 /.idea
 _ide_helper.php
