@@ -5,26 +5,32 @@
         <div class="col-xs-12">
             <h1>{!! Lang::get('pages/contact.page_title') !!}</h1>
 
-            <form action="{!! action('PagesController@postContact') !!}" method="post">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            {!! Form::open(['action' => 'PagesController@postContact']) !!}
 
-                <div class="form-group">
-                    <label for="name">{{ Lang::get('pages/contact.form.labels.name') }}</label>
-                    <input type="text" class="form-control" value="{{ old('name') }}" name="name" id="name"/>
+                <div class="form-group {!! !$errors->first('name') ?: 'has-error' !!}">
+                    <span class="required">*</span>
+                    {!! Form::label('name', Lang::get('pages/contact.form.labels.name'), ['class' => 'control-label']) !!}
+                    {!! $errors->first('name', '<span class="text-muted">:message</span>') !!}
+                    {!! Form::text('name', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
-                <div class="form-group">
-                    <label for="email">{{ Lang::get('pages/contact.form.labels.email') }}</label>
-                    <input type="email" class="form-control" value="{{ old('email') }}" name="email" id="email">
+                <div class="form-group {!! !$errors->first('email') ?: 'has-error' !!}">
+                    <span class="required">*</span>
+                    {!! Form::label('email', Lang::get('pages/contact.form.labels.email'), ['class' => 'control-label']) !!}
+                    {!! $errors->first('email', '<span class="text-muted">:message</span>') !!}
+                    {!! Form::email('email', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
-                <div class="form-group">
-                    <label for="message">{{ Lang::get('pages/contact.form.labels.message') }}</label>
-                    <textarea class="form-control" rows="3" name="message" id="message">{{ old('message') }}</textarea>
+                <div class="form-group {!! !$errors->first('message') ?: 'has-error' !!}">
+                    <span class="required">*</span>
+                    {!! Form::label('message', Lang::get('pages/contact.form.labels.message'), ['class' => 'control-label']) !!}
+                    {!! $errors->first('message', '<span class="text-muted">:message</span>') !!}
+                    {!! Form::textarea('message', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
-                <button type="submit" class="btn btn-default">{{ Lang::get('pages/contact.form.labels.submit') }}</button>
-            </form>
+                {!! Form::submit(Lang::get('pages/contact.form.labels.submit'), ['class' => 'btn btn-default']) !!}
+
+            {!! Form::close() !!}
         </div>
     </div>
 @endsection

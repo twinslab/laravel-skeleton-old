@@ -145,8 +145,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
-		'Barryvdh\Debugbar\ServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider',
 
 	],
 
@@ -197,6 +196,8 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'Form'=> 'Illuminate\Html\FormFacade',
+		'HTML'=> 'Illuminate\Html\HtmlFacade',
 
 	],
 
