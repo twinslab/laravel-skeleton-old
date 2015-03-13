@@ -29,6 +29,12 @@ class AppServiceProvider extends ServiceProvider {
 			'Illuminate\Contracts\Auth\Registrar',
 			'App\Services\Registrar'
 		);
+
+		// Register these providers for development only
+		if ($this->app->environment('local')) {
+			$this->app->register('Barryvdh\Debugbar\ServiceProvider');
+			$this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+		}
 	}
 
 }
