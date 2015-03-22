@@ -18,6 +18,7 @@ After downloading, you should run the following commands:
 $ composer install --no-scripts
 $ mv .env.example .env
 $ php artisan key:generate
+$ rm -rf .git
 ```
 
 Optionally: `$ php artisan app:name YourNamespaceHere`
