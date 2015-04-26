@@ -16,7 +16,7 @@ After downloading, you should run the following commands:
 
 ``` bash
 $ composer install --no-scripts
-$ mv .env.example .env
+$ cp .env.example .env
 $ php artisan key:generate
 $ rm -rf .git
 ```
