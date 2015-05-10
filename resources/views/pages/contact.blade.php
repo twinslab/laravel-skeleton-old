@@ -8,23 +8,23 @@
             {!! Form::open(['action' => 'PagesController@postContact']) !!}
 
                 <div class="form-group {!! !$errors->first('name') ?: 'has-error' !!}">
-                    <span class="required">*</span>
                     {!! Form::label('name', Lang::get('pages/contact.form.labels.name'), ['class' => 'control-label']) !!}
-                    {!! $errors->first('name', '<span class="text-muted">:message</span>') !!}
+                    <span class="required">*</span>
+                    {!! $errors->first('name', '<span class="text-muted pull-right">:message</span>') !!}
                     {!! Form::text('name', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group {!! !$errors->first('email') ?: 'has-error' !!}">
-                    <span class="required">*</span>
                     {!! Form::label('email', Lang::get('pages/contact.form.labels.email'), ['class' => 'control-label']) !!}
-                    {!! $errors->first('email', '<span class="text-muted">:message</span>') !!}
+                    <span class="required">*</span>
+                    {!! $errors->first('email', '<span class="text-muted pull-right">:message</span>') !!}
                     {!! Form::email('email', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group {!! !$errors->first('message') ?: 'has-error' !!}">
-                    <span class="required">*</span>
                     {!! Form::label('message', Lang::get('pages/contact.form.labels.message'), ['class' => 'control-label']) !!}
-                    {!! $errors->first('message', '<span class="text-muted">:message</span>') !!}
+                    <span class="required">*</span>
+                    {!! $errors->first('message', '<span class="text-muted pull-right">:message</span>') !!}
                     {!! Form::textarea('message', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
