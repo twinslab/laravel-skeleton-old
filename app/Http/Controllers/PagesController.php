@@ -71,9 +71,10 @@ class PagesController extends Controller {
             $message->getHeaders()->addTextHeader('X-MC-SigningDomain', '');
         });
 
-        Session::flash('alert-success', Lang::get('pages/contact.form.success'));
+        $flashMessages = ['alert-success' => Lang::get('pages/contact.form.success')];
 
-        return redirect()->route('contact');
+        return redirect()->route('contact')
+            ->withErrors($flashMessages, 'flashMessages');
     }
 
 }

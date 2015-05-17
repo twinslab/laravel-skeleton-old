@@ -6,6 +6,11 @@ use Lang;
 class SubmitContactFormRequest extends Request
 {
 	/**
+	 * {@inheritdoc}
+     */
+	protected $errorBag = 'contactForm';
+
+	/**
 	 * Determine if the user is authorized to make this request.
 	 *
 	 * @return bool
@@ -37,10 +42,11 @@ class SubmitContactFormRequest extends Request
      */
 	public function response(array $errors)
 	{
-		Session::flash('alert-danger', Lang::get('pages/contact.form.error'));
+		$flashMessages = ['alert-danger' => Lang::get('pages/contact.form.error')];
 
 		return $this->redirector->to($this->getRedirectUrl())
 			->withInput($this->except($this->dontFlash))
-			->withErrors($errors, $this->errorBag);
+			->withErrors($errors, $this->errorBag)
+			->withErrors($flashMessages, 'flashMessages');
 	}
 }

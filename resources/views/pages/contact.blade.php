@@ -7,24 +7,24 @@
 
             {!! Form::open(['action' => 'PagesController@postContact']) !!}
 
-                <div class="form-group {!! !$errors->first('name') ?: 'has-error' !!}">
+                <div class="form-group {!! !$errors->contactForm->first('name') ?: 'has-error' !!}">
                     {!! Form::label('name', Lang::get('pages/contact.form.labels.name'), ['class' => 'control-label']) !!}
                     <span class="required">*</span>
-                    {!! $errors->first('name', '<span class="text-muted pull-right">:message</span>') !!}
+                    {!! $errors->contactForm->first('name', '<span class="text-muted pull-right">:message</span>') !!}
                     {!! Form::text('name', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
-                <div class="form-group {!! !$errors->first('email') ?: 'has-error' !!}">
+                <div class="form-group {!! !$errors->contactForm->first('email') ?: 'has-error' !!}">
                     {!! Form::label('email', Lang::get('pages/contact.form.labels.email'), ['class' => 'control-label']) !!}
                     <span class="required">*</span>
-                    {!! $errors->first('email', '<span class="text-muted pull-right">:message</span>') !!}
+                    {!! $errors->contactForm->first('email', '<span class="text-muted pull-right">:message</span>') !!}
                     {!! Form::email('email', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 
-                <div class="form-group {!! !$errors->first('message') ?: 'has-error' !!}">
+                <div class="form-group {!! !$errors->contactForm->first('message') ?: 'has-error' !!}">
                     {!! Form::label('message', Lang::get('pages/contact.form.labels.message'), ['class' => 'control-label']) !!}
                     <span class="required">*</span>
-                    {!! $errors->first('message', '<span class="text-muted pull-right">:message</span>') !!}
+                    {!! $errors->contactForm->first('message', '<span class="text-muted pull-right">:message</span>') !!}
                     {!! Form::textarea('message', null, ['required', 'class' => 'form-control']) !!}
                 </div>
 

@@ -36,7 +36,9 @@
 
     <main>
         <div class="container">
-            @include('includes.messages')
+            @if ($errors->flashMessages->all())
+                @include('includes.messages')
+            @endif
 
             @yield('content')
         </div>
