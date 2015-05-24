@@ -146,6 +146,7 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 		'Illuminate\Html\HtmlServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider'
 
 	],
 
@@ -198,6 +199,7 @@ return [
 		'Debugbar'  => 'Barryvdh\Debugbar\Facade',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'HTML'      => 'Illuminate\Html\HtmlFacade',
+		'Flash'     => 'Laracasts\Flash\Flash'
 
 	],
 

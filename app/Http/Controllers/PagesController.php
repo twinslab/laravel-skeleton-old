@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use Lang, Mail, Session;
+use Lang, Mail;
 use App\Http\Requests\SubmitContactFormRequest;
 
 class PagesController extends Controller {
@@ -71,10 +71,9 @@ class PagesController extends Controller {
             $message->getHeaders()->addTextHeader('X-MC-SigningDomain', '');
         });
 
-        $flashMessages = ['alert-success' => Lang::get('pages/contact.form.success')];
+        flash()->success(Lang::get('pages/contact.form.success'));
 
-        return redirect()->route('contact')
-            ->withErrors($flashMessages, 'flashMessages');
+        return redirect()->route('contact');
     }
 
 }
