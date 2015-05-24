@@ -42,11 +42,10 @@ class SubmitContactFormRequest extends Request
      */
 	public function response(array $errors)
 	{
-		$flashMessages = ['alert-danger' => Lang::get('pages/contact.form.error')];
+		flash()->error(Lang::get('pages/contact.form.error'));
 
 		return $this->redirector->to($this->getRedirectUrl())
 			->withInput($this->except($this->dontFlash))
-			->withErrors($errors, $this->errorBag)
-			->withErrors($flashMessages, 'flashMessages');
+			->withErrors($errors, $this->errorBag);
 	}
 }
