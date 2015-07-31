@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
 
+    @yield('css')
+
     {{-- Google Analytics enabled only on the production server --}}
     @if(App::environment() === 'production')
         <script>
