@@ -1,4 +1,6 @@
-<?php namespace App\Http\Middleware;
+<?php
+
+namespace App\Http\Middleware;
 
 use Closure;
 
@@ -13,8 +15,7 @@ class RedirectTrailingSlashes
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (preg_match('/.+\/$/', $request->getRequestUri()))
-		{
+		if (preg_match('/.+\/$/', $request->getRequestUri())) {
 			return redirect(rtrim($request->getRequestUri(), '/'), 301);
         }
 
