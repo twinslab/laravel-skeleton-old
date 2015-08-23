@@ -64,7 +64,7 @@ class PagesController extends Controller {
         {
             $message->subject('Contact Form Message')
                 ->from($input['email'], $input['name'])
-                ->to(env('EMAIL_ADDRESS_TO'));
+                ->to(env('MAIL_ADDRESS_TO'));
 
             // Mandrill-related headers
             $message->getHeaders()->addTextHeader('X-MC-Subaccount', '');
