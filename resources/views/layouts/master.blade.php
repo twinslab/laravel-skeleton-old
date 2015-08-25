@@ -10,10 +10,11 @@
 
     <!-- Favicons -->
 
-    <!-- CSS global -->
+    {{-- Global CSS --}}
  4  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="{!! asset('assets/css/main.css') !!}">
 
+    {{-- Page specific CSS --}}
     @yield('css')
 
     {{-- Google Analytics enabled only on the production server --}}
@@ -50,10 +51,12 @@
         </div>
     </footer>
 
+    {{-- Global JS --}}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="{!! asset('assets/js/main.js') !!}"></script>
 
+    {{-- Page-specific JS --}}
     @yield('scripts')
 </body>
 </html>
